@@ -8,7 +8,21 @@ const boxes = document.querySelectorAll(".box");
 //Végig megyünk az egyes div-eken, és rájuk akasztunk egy-egy eseményfigyelőt:
 boxes.forEach(element => {
     //Az eseményfigyelő a click eseményre indul be:
+    //console.log(element)
     element.addEventListener("click", (event) => {
-        event.target.style.backgroundColor = "#ff0000";
+        console.log(event.target);
+        let currentElement =event.target;
+        if(currentElement.style.backgroundColor===""){
+            currentElement.style.backgroundColor = "#ff0000";
+        }
+        else{
+            currentElement.style.backgroundColor="";
+            currentElement.textContent="";
+
+        }
+      /*  event.target.style.backgroundColor = "#ff0000";*/
+        event.target.style.textAlign="center";
+        event.target.textContent = event.target.id;
     })
-})
+});
+
